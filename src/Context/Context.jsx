@@ -8,7 +8,7 @@ import SpeechRecognition from 'react-speech-recognition';
 
 const ContextProvider = (props) => {
   const [input, setInput] = useState("");
-  const [recentPrompt, setRecentPrompt] = useState(""); // Corrected variable name
+  const [recentPrompt, setRecentPrompt] = useState(""); 
   const [prevPrompts, setPrevPrompts] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
