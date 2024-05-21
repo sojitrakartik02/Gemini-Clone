@@ -1,0 +1,361 @@
+.main{
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+    
+}
+ .dark-theme  .main {
+   
+    color: #fff  ; 
+    background-color: #282c35; 
+}
+
+ .light-theme .main{
+    color: #000;
+    background: #f0f4f9;
+}
+
+.dark-theme .main .nav{
+    color: white;
+    
+}
+
+
+.main .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: #585858;
+}
+.main .nav img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.main-container{
+    max-width: 900px;
+    margin: auto;
+
+
+}
+.main .greet{
+    margin: 50px 0px;
+    font-size: 56px;
+    color: #c4c7c5;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.main .greet span{
+    background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+    gap:15px;
+    
+    padding:20px;
+    
+
+}
+
+.main .card{
+    height: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    background-color: #e5edf7;
+   
+
+}
+
+
+.main .card img{
+    position: absolute;
+    border-radius: 20px;
+    width: 35px;
+    padding: 5px;
+    bottom: 10px;
+    right: 10px;
+}
+
+.main .card p{
+    font-size: 17px;
+    color: #585858;
+}
+.main .card:hover{
+    background-color: #dfdfdf;
+}
+
+.main-bottom{
+    position: absolute;
+    max-width: 900px;
+    bottom: 0;
+    margin: auto;
+    padding: 0 20px;
+    width: 100%;
+
+}
+
+
+.main .bottom-info{
+    margin: 15px auto;
+    font-weight: 300;
+    font-size: 13px;
+    text-align: center;
+}
+.result{
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+.result::-webkit-scrollbar{
+    display: none;
+}
+
+.result-title{
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img{
+    border-radius: 50%;
+    width: 40px;
+}
+.result-data{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+
+
+.loader{
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+}
+.loader hr{
+    border-radius: 4px;
+    border: none;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right,#9ed7ff,#ffffff,#9ed7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 3s infinite linear;
+}
+@keyframes loader{
+    0%{
+        background-position: -800px 0px;
+    }
+    100%{
+        background-position: 800px 0px;
+    }
+}
+
+.result-data p{
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+@media (max-width:600px){
+    .main-bottom input{
+        flex: none;
+        width: 150px;
+    }
+    .main-bottom img{
+        width: 20px;
+    }
+    .search-box{
+        padding:5px 10px;
+    }
+    .search-box div{
+        gap: 5px;
+    }
+}
+
+.result-data img {
+    animation: rotateImage 2s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+@keyframes rotateImage {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.mic-icon {
+    cursor: pointer;
+    width: 45px;  /* Adjust size as needed */
+    height: 45px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.mic-icon:hover {
+    background-color: #e1e1e1; 
+}   
+
+.gallery-icon:hover{
+    background-color: #e1e1e1;
+    border-radius: 49%;
+}
+.gallery-icon{
+    cursor: pointer;
+    width: 45px; 
+    height: 45px;
+    padding: 10px;
+   
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+
+}
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-container .tooltip-text {
+    visibility: hidden;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    font-size:12px;
+    bottom: -80%;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.tooltip-container-gallery {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-container-gallery .tooltip-text-gallery {
+    visibility: hidden;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    font-size:12px;
+    bottom: -80%;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container-gallery:hover .tooltip-text-gallery {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/* Add this at the end of your Main.css */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+.mic-icon.active {
+    animation: pulse 1.5s infinite;
+}
+
+
+
+
+.search-box {
+    display: flex;
+    flex-direction: column; /* Change to column to stack elements vertically */
+    border-radius: 50px;
+    background-color: #e5edf7;
+    padding: 10px 20px;
+    gap: 10px; /* Space between input and image preview */
+}
+
+.search-box-input-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    padding: 0 18px;
+    outline: none;
+    flex: 1;
+    font-size: 18px;
+}
+
+.image-preview-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.image-preview {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.close-button {
+    position: absolute;
+    top: -5px;
+    left: 37px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

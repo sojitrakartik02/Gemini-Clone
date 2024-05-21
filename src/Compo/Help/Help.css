@@ -1,0 +1,88 @@
+.help-menu {
+    position: absolute;
+    bottom: 23%;
+    left: 5%;
+    transform: translateX(-50%); 
+    width: 150px;
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    animation: slideIn 0.3s forwards, fadeIn 0.3s forwards;
+}
+
+
+.dark-theme  .help-menu {
+    background-color: rgb(81, 83, 86);
+    color: white    ; 
+   
+}
+.light-theme .help-menu{
+    background-color: white;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, 100%);
+    }
+    to {
+        transform: translate(-50%, 0%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.help-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.help-header img {
+    width: 20px;
+}
+
+.help-header p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.help-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.dark-theme  .help-menu ul li:hover{
+    background-color: rgb(116, 120, 128);
+}
+.dark-theme .help-menu button{
+    color: white;
+}

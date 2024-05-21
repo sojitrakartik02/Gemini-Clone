@@ -1,0 +1,200 @@
+.sidebar{
+    min-height: 100vh;
+    flex-direction: column;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 25px 15px;
+}
+  
+ .dark-theme  .sidebar {
+    
+    color: white    ; 
+    background-color: #131416; 
+}
+ .light-theme .sidebar{
+    color: #000;
+    background: #e0efff;
+
+}
+ .dark-theme  .sidebar .recent-entry {
+    color: white;
+}
+.dark-theme  .sidebar .recent-entry img {
+    background: white;
+    border-radius: 50%;
+}
+.dark-theme .sidebar .menu{
+    background-color: white;
+    
+}
+.dark-theme  .sidebar .recent-entry:hover  {
+    background: rgb(105, 102, 102);
+   
+}
+
+.sidebar img{
+    width: 20px;
+}
+.sidebar .menu{
+display: block;
+margin-left: 10px;
+cursor: pointer
+;
+}
+
+.sidebar .new-chat{
+    margin-top: 50px;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #e6eaf1;
+    border-radius: 50px;
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+    padding: 10px 15px;
+
+}
+
+.sidebar .recent{
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s;
+}
+.sidebar .title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+.sidebar .recent-entry{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    padding-right: 10px;
+    border-radius:50px ;
+    color: #282828;
+    cursor: pointer;
+}
+
+.sidebar .recent-entry:hover{
+   
+    background-color: #e2e6eb;
+  
+}
+
+.sidebar .bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .bottom-item{
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+@media (max-width:600px){
+    .sidebar{
+        display: none;
+    }
+
+}
+
+
+
+.tooltip-help {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-help .help {
+    visibility: hidden;
+    width: 50px;
+    
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    font-size:12px;
+    bottom: -110%;
+    left: -70%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.dark-theme .sidebar .tooltip-help .help{
+    color: white;
+}
+.dark-theme .sidebar .tooltip-activity .activity{
+    color: white;
+}
+.dark-theme .sidebar .tooltip-setting .setting{
+    color: white;
+}
+
+
+.tooltip-help:hover .help {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.tooltip-activity {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-activity .activity {
+    visibility: hidden;
+    width: 50px;
+    
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    font-size:12px;
+    bottom: -110%;
+    left: -50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-activity:hover .activity {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+.tooltip-setting {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-setting .setting {
+    visibility: hidden;
+    width: 50px;
+    
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    font-size:12px;
+    bottom: -100%;
+    left: -50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-setting:hover .setting {
+    visibility: visible;
+    opacity: 1;
+}
