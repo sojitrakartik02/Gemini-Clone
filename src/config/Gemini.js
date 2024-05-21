@@ -1,25 +1,7 @@
-/*
- * Install the Generative AI SDK
- *
- * $ npm install @google/generative-ai
- *
- * See the getting started guide for more information
- * https://ai.google.dev/gemini-api/docs/get-started/node
- */
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
-
-
-
-
-
-  import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
-
-const apiKey = "AIzaSyDWKTmvtbtPEMK26fdoj-YA_rc5eH_BXgw";
+const apiKey = "AIzaSyBV9BVkc0O1UpySMi7O8elP7vKJp_hohD4";
 const genAI = new GoogleGenerativeAI(apiKey);
-
-if (!apiKey) {
-  throw new Error('API_KEY is not defined in the environment variables.');
-}
 
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash-latest",
@@ -52,18 +34,25 @@ const safetySettings = [
   },
 ];
 
+/**
+ * Sends a prompt to the Google Generative AI model and returns the response.
+ * @param {string} prompt - The prompt to send to the model.
+ * @returns {Promise<string>} A promise that resolves with the generated response.
+ */
 async function run(prompt) {
-  const chatSession = model.startChat({
-    generationConfig,
-    safetySettings,
-    history: [],
-  });
+  try {
+    const chatSession = model.startChat({
+      generationConfig,
+      safetySettings,
+      history: [],
+    });
 
-  const result = await chatSession.sendMessage(prompt);
-  const response=result.response;
-
-  console.log(result.response.text());
-return response.text();
+    const result = await chatSession.sendMessage(prompt);
+    return result.response.text();
+  } catch (error) {
+    console.error("An error occurred while fetching response:", error);
+    throw error; // Re-throw the error to propagate it to the caller
+  }
 }
 
 export default run;

@@ -41,8 +41,16 @@ const ContextProvider = (props) => {
   
     const response = await run(usedPrompt);
   
+    if (response === undefined || typeof response !== "string") {
+      console.error("Invalid or undefined response:", response);
+      setLoading(false);
+      return;
+    }
+  
+    console.log("Response:", response);
+  
     let responseArry = response.split("**");
-    
+  
     let newResponse = "";
     for (let i = 0; i < responseArry.length; i++) {
       if (i === 0 || i % 2 !== 1) {
@@ -51,11 +59,11 @@ const ContextProvider = (props) => {
         newResponse += "<b>" + responseArry[i] + "</b>";
       }
     }
-    let newResponse2 = newResponse.split("*").join("</br>")
+    let newResponse2 = newResponse.split("*").join("</br>");
     let newResponseArray = newResponse2.split(" ");
     for (let i = 0; i < newResponseArray.length; i++) {
-      const nextWord = newResponseArray[i]
-      delayPara(i, nextWord + " ")
+      const nextWord = newResponseArray[i];
+      delayPara(i, nextWord + " ");
     }
     setLoading(false);
     setInput("");
