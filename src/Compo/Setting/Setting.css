@@ -87,7 +87,6 @@ ul li:hover {
 }
 
 
-/* Setting.css */
 .theme{
     display: flex;
     justify-content: space-between;
@@ -143,7 +142,6 @@ ul li:hover {
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }

@@ -185,7 +185,7 @@
 }
 
 .result-data img {
-    animation: rotateImage 2s linear infinite; /* Adjust duration and timing function as needed */
+    animation: rotateImage 2s linear infinite; 
 }
 
 @keyframes rotateImage {
@@ -200,11 +200,11 @@
 
 .mic-icon {
     cursor: pointer;
-    width: 45px;  /* Adjust size as needed */
+    width: 45px;  
     height: 45px;
     padding: 10px;
     border-radius: 50%;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    transition: background-color 0.3s ease; 
 }
 
 .mic-icon:hover {
@@ -221,8 +221,7 @@
     height: 45px;
     padding: 10px;
    
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-
+    transition: background-color 0.3s ease; 
 }
 .tooltip-container {
     position: relative;
@@ -285,7 +284,6 @@
 
 
 
-/* Add this at the end of your Main.css */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
@@ -307,11 +305,11 @@
 
 .search-box {
     display: flex;
-    flex-direction: column; /* Change to column to stack elements vertically */
+    flex-direction: column; 
     border-radius: 50px;
     background-color: #e5edf7;
     padding: 10px 20px;
-    gap: 10px; /* Space between input and image preview */
+    gap: 10px; 
 }
 
 .search-box-input-container {

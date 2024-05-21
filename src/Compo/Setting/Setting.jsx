@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
 import { assets } from '../../assets/assets';
 import './Setting.css';
-import { ThemeContext } from '../../Context/ThemeContext'; // Importing named export
-
+import { ThemeContext } from '../../Context/ThemeContext'; 
 const Setting = ({ onClose }) => {
-    const { toggleDarkTheme, darkTheme } = useContext(ThemeContext); // Get darkTheme state
+    const { toggleDarkTheme, darkTheme } = useContext(ThemeContext); 
 
     const handleToggle = () => {
-        // Log before toggling
+     
        
         console.log('Before toggling:', darkTheme);
-        // Call the toggle function
+      
         toggleDarkTheme();
-        // Log after toggling
+       
         console.log('After toggling:', darkTheme);
     };
 
