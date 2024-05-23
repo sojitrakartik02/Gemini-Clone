@@ -1,19 +1,26 @@
-import React from 'react'
-import Sidebar from './Compo/Siderbar/Sidebar'
-import Main from './Compo/Main/Main'
 import 'regenerator-runtime/runtime';
-import './index.css'
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './Compo/Siderbar/Sidebar';
+import Main from './Compo/Main/Main';
+import Plink from './Compo/PLink/Plink';
+import './index.css';
+import { ThemeProvider } from './Context/ThemeContext';
 
-import  { ThemeProvider } from './Context/ThemeContext';
 const App = () => {
-  return (
-    < >
-      <ThemeProvider>
-        <Sidebar />
-        <Main />
-      </ThemeProvider>
-    </>
-  )
-}
+  const [showPublicLinkContent, setShowPublicLinkContent] = useState(false);
 
-export default App
+  return (
+    <ThemeProvider>
+      <Router>
+        <Sidebar setShowPublicLinkContent={setShowPublicLinkContent} />
+        <Routes>
+          <Route path="/" element={<Main showPublicLinkContent={showPublicLinkContent} setShowPublicLinkContent={setShowPublicLinkContent} />} />
+          <Route path="/public-link" element={<Plink setShowPublicLinkContent={setShowPublicLinkContent} />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
+};
+
+export default App;

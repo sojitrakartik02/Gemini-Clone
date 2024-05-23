@@ -5,7 +5,7 @@ import { Context } from '../../Context/Context';
 import Help from '../Help/Help';
 import Setting from '../Setting/Setting';
 import { ThemeContext } from '../../Context/ThemeContext';
-const Sidebar = () => {
+const Sidebar = ({setShowPublicLinkContent}) => {
     const [extended, setExtended] = useState(false);
     const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context)
     const [showHelp, setShowHelp] = useState(false)
@@ -71,7 +71,7 @@ const Sidebar = () => {
                         {extended ? "" : <span className='setting'> Setting</span>}
                     </div>
                     {extended ? <p>Setting</p> : null}
-                    {showSetting && <Setting onClose={() => setShowSetting(false)} />}
+                    {showSetting && <Setting onClose={() => setShowSetting(false)} setShowPublicLinkContent={setShowPublicLinkContent} />}
                 </div>
             </div>
         </div>
